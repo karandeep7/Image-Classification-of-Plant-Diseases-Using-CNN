@@ -11,18 +11,22 @@ We trained and tested multiple CNN architectures, including ResNet-18, VGG-16, a
 ## Requirements
 To run the code, the following libraries and tools are required:
 
-- Python 3.x
-- PyTorch: For building, training, and testing deep learning models.
-- torchvision: For accessing pre-trained models and image transformations.
-- pandas: For handling tabular data.
-- scikit-learn: For splitting datasets and computing metrics.
-- matplotlib and seaborn: For visualizations, including confusion matrices.
-- tqdm: For displaying progress bars.
-- PIL: For image processing.
+- torch==2.0.0
+- torchvision==0.15.0
+- pandas==1.5.3
+- Pillow==9.4.0
+- scikit-learn==1.2.0
+- tqdm==4.65.0
+- matplotlib==3.7.0
+- seaborn==0.12.2
+- numpy==1.24.0
+- gdown==4.7.0
+- scikit-image==0.20.3
   
-Ensure all required libraries are installed
+Ensure all required libraries are installed. If you are using **Google Colab (recommended)** to run the code, all the requirements come preinstalled.
 
 ## Instructions
+Please use **Google Collab** to run .ipynb files in the repository for seamless workflow.
 ### Dataset
 The datasets used in this project can be downloaded from Kaggle:
 
@@ -31,6 +35,9 @@ The datasets used in this project can be downloaded from Kaggle:
 - Plant Village Dataset: https://www.kaggle.com/datasets/adilmubashirchaudhry/plant-village-dataset
 
 The datasets are automatically imported into the code using Kaggle's API. So you don't need to download them manually
+
+**The sample 100 images datasets and trained models are available on Google Drive:**
+https://drive.google.com/drive/folders/1zsRzAamIAjCsfowdBV4kkZPplyG3i8vd
 
 ### Training the Models
 To train the models:
@@ -42,16 +49,22 @@ To train the models:
 Ensure adequate GPU resources are enabled in the Colab runtime for faster training.
 
 ### Testing the Models
-To test the trained models:
-
-- Open the test file in Google Colab.
-- Upload the trained model files to the same directory as the test file.
-- If using Google Colab, upload the models to the current working directory in Colab.
+**On the sample test dataset (100 images per dataset):**
+- Open the test_on_100_images.ipynb file in Google Colab.
 - Run all cells in the notebook.
+- The script automatically downloads the datasets and trained models from Google Drive so you don't have to manually upload anything.
+  
+The script evaluates the models on the test dataset and outputs metrics such as accuracy, precision, recall, F1-score, confusion matrices and TSNE visualization.
+
+**On the complete test dataset**
+
+- Open the test.ipynb file in Google Colab.
+- Run all cells in the notebook.
+- The script automatically downloads the datasets from kaggle and trained models from Google Drive.
   
 The script evaluates the models on the test dataset and outputs metrics such as accuracy, precision, recall, F1-score, confusion matrices and TSNE visualization.
 
 ## Project Files
 - train.ipynb: Contains the code for training the models.
 - test.ipynb: Contains the code for evaluating the models using pre-trained weights.
-- Pre-trained models: Ensure these are available in the same directory as the test.ipynb file before testing.
+- test_on_100_images.ipynb: Contains the code for evaluating the models on the sample dataset using pre-trained weights.
